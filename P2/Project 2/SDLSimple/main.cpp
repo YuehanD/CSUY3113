@@ -161,27 +161,42 @@ void Update() {
 
 	if (ball_position.y >= 7.0f)
 	{
-		ball_movement.y *= -1;
+		if (ball_movement.y > 0) {
+			ball_movement.y *= -1;
+		}
 	}
 	else if (ball_position.y <=	-7.0f)
 	{
-		ball_movement.y *= -1;
+		if (ball_movement.y < 0) {
+			ball_movement.y *= -1;
+		}
 	}
 
-	if (ball_position.x >= 9.6f) {
-		ball_movement.x =0;
+	if (ball_position.x >= 8.3f) {
+		//ball_movement.x = 0;
+		//ball_movement.y = 0;
+		ball_movement.x *= -1;
 	}
 	else if (ball_position.x <= -9.6f) {
-		ball_movement.x =0;
+		//ball_movement.x = 0;
+		//ball_movement.y = 0;
+		if (ball_movement.x < 0) {
+			ball_movement.x *= -1;
+		}
 	}
 
-	if (ball_position.x <= -8.3f && ((ball_position.y - 0.5f >= left_position.y - 1.5f) || (ball_position.y + 0.5f <= left_position.y + 1.5f))) {
+
+
+	if (((modelMatrix[3].x) >= (rightMatrix[3].x - 0.35f)) && (((modelMatrix[3].y + 0.25f) <= (rightMatrix[3].y + 1.0f)) && ((modelMatrix[3].y - 0.25f) >= (rightMatrix[3].y - 1.0f)))) {
 		ball_movement.x *= -1;
 	}
 
-	if (ball_position.x >= 8.3f && ((ball_position.y - 0.5f >= right_position.y - 1.5f) || (ball_position.y + 0.5f <= right_position.y + 1.5f))) {
-		ball_movement.x *= -1;
+	if (((modelMatrix[3].x) <= (leftMatrix[3].x + 0.35f)) && (((modelMatrix[3].y + 0.25f) <= (leftMatrix[3].y + 1.0f)) && ((modelMatrix[3].y - 0.25f) >= (leftMatrix[3].y - 1.0f)))) {
+		ball_movement.x *= -1; 
 	}
+
+
+	
 
 }
 
