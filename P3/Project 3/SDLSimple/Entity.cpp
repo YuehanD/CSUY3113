@@ -64,7 +64,7 @@ void Entity::Update(float deltaTime,Entity *platforms,Entity *ends,int platformC
 
 	
 
-	velocity.x = movement.x * speed;
+
 	velocity += acceleration * deltaTime;
 	position += velocity * deltaTime;
 

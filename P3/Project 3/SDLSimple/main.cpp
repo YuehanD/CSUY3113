@@ -150,10 +150,10 @@ void Initialize() {
 
 	// Initialize Player
 	state.player = new Entity();
-	state.player->position = glm::vec3(-4.0f, 5.0f, 0.0f);
+	state.player->position = glm::vec3(-4.0f, 4.0f, 0.0f);
 	state.player->movement = glm::vec3(0);
-	state.player->acceleration = glm::vec3(0, -0.81f, 0);
-	state.player->speed = 4.0f;
+	state.player->acceleration = glm::vec3(0, -0.31f, 0);
+	state.player->speed = 0.0f;
 	state.player->textureID = LoadTexture("playerShip3_blue.png");
 
 
@@ -243,7 +243,7 @@ void Initialize() {
 
 void ProcessInput() {
 
-	state.player->movement = glm::vec3(0);
+	state.player->acceleration.x = 0;
 
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
@@ -257,11 +257,11 @@ void ProcessInput() {
 			switch (event.key.keysym.sym) {
 			case SDLK_LEFT:
 				// Move the player left
-				state.player->acceleration.x = -0.05f;
+				state.player->acceleration.x = -4.0f;
 				break;
 
 			case SDLK_RIGHT:
-				state.player->acceleration.x = 0.05f;
+				state.player->acceleration.x = 4.0f;
 				// Move the player right
 				break;
 
@@ -276,18 +276,16 @@ void ProcessInput() {
 	const Uint8 *keys = SDL_GetKeyboardState(NULL);
 
 	if (keys[SDL_SCANCODE_LEFT]) {
-		state.player->movement.x = -1.0f;
+		state.player->acceleration.x = -4.0f;
 		state.player->animIndices = state.player->animLeft;
 	}
 	else if (keys[SDL_SCANCODE_RIGHT]) {
-		state.player->movement.x = 1.0f;
+		state.player->acceleration.x = 4.0f;
 		state.player->animIndices = state.player->animRight;
 	}
 
 
-	if (glm::length(state.player->movement) > 1.0f) {
-		state.player->movement = glm::normalize(state.player->movement);
-	}
+
 
 }
 
