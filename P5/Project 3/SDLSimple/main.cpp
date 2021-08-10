@@ -22,6 +22,7 @@
 #include "Start.h"
 #include "Level1.h"
 #include "Level2.h"
+#include "Level3.h"
 
 #include <vector>
 
@@ -39,9 +40,11 @@ glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
 
 
 Scene *currentScene;
-Scene *sceneList[3];
+Scene *sceneList[4];
 
 bool start = false;
+bool win = false;
+bool fail = false;
 
 void SwitchToScene(Scene *scene) {
 	currentScene = scene;
@@ -84,6 +87,7 @@ void Initialize() {
 	sceneList[0] = new Start();
 	sceneList[1] = new Level1();
 	sceneList[2] = new Level2();
+	sceneList[3] = new Level3();
 	SwitchToScene(sceneList[0]);
 
 	fontTextureID = Util::LoadTexture("font1.png");
