@@ -9,6 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="源文件\Scenes">
+      <UniqueIdentifier>{6bdd69de-12dc-4c15-9fa0-e89a42b483c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Scenes">
+      <UniqueIdentifier>{d7a3e00a-22f3-4247-aa1b-0c0bdefc12ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -20,6 +26,27 @@
     <ClCompile Include="Entity.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>源文件\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2.cpp">
+      <Filter>源文件\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Start.cpp">
+      <Filter>源文件\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Level3.cpp">
+      <Filter>源文件\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderProgram.h">
@@ -30,6 +57,27 @@
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>头文件\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h">
+      <Filter>头文件\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Start.h">
+      <Filter>头文件\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Level3.h">
+      <Filter>头文件\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
