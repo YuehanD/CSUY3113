@@ -287,10 +287,14 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
 	}
 	else if (entityType == DOOR) {
 		if (player->CheckCollisionsX(this, 1)) {
-			player->win = true;
+			if (player->door_open) {
+				player->win = true;
+			}
 		}
 		if (player->CheckCollisionsY(this, 1)) {
-			player->win = true;
+			if (player->door_open) {
+				player->win = true;
+			}
 		}
 	}
     
