@@ -113,9 +113,11 @@ void Level2::Update(float deltaTime) {
 	state.door->Update(deltaTime, state.player, NULL, 0, state.map);
 
 	if (state.player->door_open == true) {
-		GLuint openTextureID = Util::LoadTexture("open.png");
-		state.door->textureID = openTextureID;
-		state.player->door_open = false;
+		if (!state.door->door_open) {
+			GLuint openTextureID = Util::LoadTexture("open.png");
+			state.door->textureID = openTextureID;
+			state.door->door_open = true;
+		}
 	}
 
 	if (state.player->win == true) {

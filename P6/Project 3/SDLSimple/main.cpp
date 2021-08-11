@@ -59,7 +59,7 @@ void SwitchToScene(Scene *scene) {
 
 void Initialize() {
 	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
-	displayWindow = SDL_CreateWindow("Rise of the AI!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+	displayWindow = SDL_CreateWindow("Maze Traveller!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
 	SDL_GL_MakeCurrent(displayWindow, context);
 
@@ -237,7 +237,7 @@ void Render() {
 
 
 	if (!start) {
-		Util::DrawText(&program, fontTextureID, "RIDDLE TRAVELLER", 1.0f, -0.49, glm::vec3(-3.5, 0.5, 0));
+		Util::DrawText(&program, fontTextureID, "MAZE TRAVELLER", 1.0f, -0.49, glm::vec3(-3.4, 0.5, 0));
 		Util::DrawText(&program, fontTextureID, "PRESS ENTER TO START!", 0.8f, -0.5f, glm::vec3(-2.75, -0.8, 0));
 	}
 	else if (fail) {
