@@ -1,0 +1,5 @@
+﻿  main.cpp
+e:\做过的东西和我的东西\csuy3113-yd1521\p6\project 3\sdlsimple\main.cpp(240): warning C4305: “参数”: 从“double”到“float”截断
+e:\做过的东西和我的东西\csuy3113-yd1521\p6\project 3\sdlsimple\main.cpp(244): warning C4305: “参数”: 从“double”到“float”截断
+e:\做过的东西和我的东西\csuy3113-yd1521\p6\project 3\sdlsimple\main.cpp(248): warning C4305: “参数”: 从“double”到“float”截断
+  SDLSimple.vcxproj -> E:\做过的东西和我的东西\CSUY3113-yd1521\P6\Project 3\Debug\SDLSimple.exe

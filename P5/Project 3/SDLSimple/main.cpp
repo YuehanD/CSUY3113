@@ -213,6 +213,7 @@ void Render() {
 	if (!start) {
 		Util::DrawText(&program, fontTextureID, "PRESS ENTER TO START!", 0.8f, -0.5f, glm::vec3(2, -4, 0));
 	}
+
 	
 
 	SDL_GL_SwapWindow(displayWindow);

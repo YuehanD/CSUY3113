@@ -167,13 +167,10 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
 	}
 
 	if (entityType == ENEMY) {
-		AI(objects);
+		//AI(objects);
 	}
 
-	if (entityType == PLATFORM) {
-		return;
-	}
-	else if (entityType == ENEMY) {
+	if (entityType == ENEMY) {
 		velocity.x = movement.x * speed;
 		velocity += acceleration * deltaTime;
 

@@ -26,7 +26,7 @@ void Level1::Initialize() {
 	// Initialize Player
 	state.player = new Entity();
 	//state.player->modelMatrix = glm::scale(modelMatrix, glm::vec3(0.5f, 0.5f, 1.0f));
-	state.player->position = glm::vec3(5, 0.0f, 0);
+	state.player->position = glm::vec3(5, -3.0f, 0);
 	state.player->movement = glm::vec3(0);
 	state.player->acceleration = glm::vec3(0, -10.81f, 0);
 	state.player->speed = 2.2f;
@@ -60,7 +60,7 @@ void Level1::Initialize() {
 
 	state.enemies[0].entityType = ENEMY;
 	state.enemies[0].textureID = enemyTextureID;
-	state.enemies[0].position = glm::vec3(3, -2.25f, 0);
+	state.enemies[0].position = glm::vec3(5, -3.0f, 0);
 	state.enemies[0].speed = 1;
 	state.enemies[0].isActive = true;
 
@@ -69,6 +69,7 @@ void Level1::Initialize() {
 }
 void Level1::Update(float deltaTime) {
 	state.player->Update(deltaTime, state.player, state.enemies, LEVEL1_ENEMY_COUNT, state.map);
+	//state.enemies[0].Update(deltaTime, state.player, state.enemies, LEVEL1_ENEMY_COUNT, state.map);
 
 	if (state.player->position.x >= 12) {
 		state.nextScene = 2;
@@ -78,5 +79,6 @@ void Level1::Update(float deltaTime) {
 void Level1::Render(ShaderProgram *program) {
 	state.map->Render(program);
 	state.player->Render(program);
+	state.enemies[0].Render(program);
 }
 
